@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class Student {
+    String id;
+    String name;
+    int marks;
+    double percentage;
+    double attendance;
+
+    Student(String id, String name, int marks, double attendance) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+        this.attendance = attendance;
+        this.percentage = (marks / 500.0) * 100;
+    }
+
+    void displayProfile() {
+        System.out.println("\n===== STUDENT REPORT CARD =====");
+        System.out.println("Student ID : " + id);
+        System.out.println("Name       : " + name);
+        System.out.println("Marks      : " + marks + "/500");
+        System.out.println("Percentage : " + percentage + "%");
+        System.out.println("Attendance : " + attendance + "%");
+
+        System.out.println("Attendance Status : " +
+                (attendance >= 75 ? "Eligible" : "Shortage"));
+
+        System.out.println("Result : " +
+                (percentage >= 40 ? "PASS" : "FAIL"));
+
+        System.out.println("===============================");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student student = new Student(
+            "25G2A02L15",
+            "Jadapalli Chinna babu",
+            400,
+            90
+        );
+
+        student.displayProfile();
+    }
+}
